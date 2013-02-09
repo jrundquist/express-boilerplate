@@ -1,0 +1,29 @@
+{
+  "name": "express-boilerplate",
+  "description": "A boilerplate for a node.js / express / ejs / less / coffeescript / Heroku site",
+  "version": "0.0.0",
+  "private": true,
+  "author": "jrundquist (http://github.com/jrundquist)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrundquist/express-boilerplate.git"
+  },
+  "engines": {
+    "node": "0.8.14",
+    "npm": "1.1.x"
+  },
+  "dependencies": {
+    "coffee-script": "1.3.3",
+    "connect-less": "0.3.1",
+    "connect-mongodb": "git://github.com/masylum/connect-mongodb.git#master",
+    "ejs": "0.8.0",
+    "everyauth": "0.3.1",
+    "express": "3.0.5",
+    "express-messages-bootstrap": "0.1.0",
+    "express-partials": "0.0.6",
+    "ezcrypto": "0.0.3",
+    "less": "1.3.0",
+    "request": "2.10.0",
+    "underscore": "1.4.2"
+  }
+}
