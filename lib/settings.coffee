@@ -14,7 +14,9 @@ exports.boot = (app) ->
 
     app.use express.methodOverride()
 
-    app.use (req,res,next)-> res.header("X-powered-by", "Sharks"); next()
+    app.use (req,res,next) ->
+      res.header("X-powered-by", "Sharks")
+      next()
 
     app.use require('connect-less')(
       src: __dirname + '/../public/'
@@ -35,10 +37,10 @@ exports.boot = (app) ->
     app.use express.cookieParser 'detta-är-en-hemlighet'
 
     app.use express.session(
-      secret: 'c6b747964854ebfc8f1f8a42c232b6d3'
+      secret: '43894d20bec9d6fb9e5e6ebae119e20c33feec50'
       cookie:
-        domain: 'jobs.'+app.config.COURSESHARK_DOMAIN
-      domain: 'jobs.'+app.config.COURSESHARK_DOMAIN
+        domain: app.config.DOMAIN
+      domain: app.config.DOMAIN
       httpOnly: true
       # 5 days
       maxAge: 1000*60*60*24*5

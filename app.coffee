@@ -39,7 +39,7 @@ mongoose.connection.on 'open', ()->
 
   # Start the app by listening on <port>
   server = app.listen port
-  console.log "JobShark started on port #{port}"
+  console.log "Express-Boilerplate started on port #{port}"
 
 
 console.log app.config
