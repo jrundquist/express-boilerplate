@@ -1,4 +1,4 @@
-# express-boilderplate
+# express-boilerplate
 This is a simple boilerplate for websites. It uses a simple addaptaion of the setup used on the courseshark wesbsite.
 
 
