@@ -42,5 +42,4 @@ mongoose.connection.on 'open', ()->
   console.log "Express-Boilerplate started on port #{port}"
 
 
-console.log app.config
 mongoose.connect app.config.MONGOHQ_URL||'mongpo'

@@ -23,8 +23,6 @@
     "express-partials": "0.0.6",
     "ezcrypto": "0.0.3",
     "less": "1.3.0",
-    "mongoose": "3.5.3",
-    "request": "2.10.0",
-    "underscore": "1.4.2"
+    "mongoose": "3.5.3"
   }
 }
