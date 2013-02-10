@@ -21,6 +21,14 @@ mongoose.connection.on 'open', ()->
   require('./lib/error-handler').boot(app);
 
 
+  # Bootstrap models
+  app.models = {}
+  model_loc = __dirname + '/models'
+  model_files = (require 'fs').readdirSync model_loc
+  model_files.forEach (file) ->
+    (require model_loc + '/' + file).boot(app)
+
+
   # Bootstrap controllers
   controller_loc = __dirname + '/controllers'
   controller_files = (require 'fs').readdirSync controller_loc
@@ -33,4 +41,6 @@ mongoose.connection.on 'open', ()->
   server = app.listen port
   console.log "JobShark started on port #{port}"
 
-mongoose.connect app.config.MONGOHQ_URL
+
+console.log app.config
+mongoose.connect app.config.MONGOHQ_URL||'mongpo'
