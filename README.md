@@ -25,6 +25,7 @@ Any evironmental variables you may need to set up are to be put in the `.env` fi
 
 ## Running
 It is safest to run this application using the `foreman` environement runner provided by the Heroku toolbelt.
+As a shortcut you may use `./run` to run the project. This requires nodemon to be installed either locally or globally. 
 
 ## Pieces
 
