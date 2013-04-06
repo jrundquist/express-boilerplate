@@ -34,6 +34,7 @@ LOGGLY_PASSWORD=
 LOGGLY_INPUT=
 ```
 
+
 ## Running
 It is safest to run this application using the `foreman` environement runner provided by the Heroku toolbelt.
 As a shortcut you may use `./run` to run the project. This requires nodemon to be installed either locally or globally. 
