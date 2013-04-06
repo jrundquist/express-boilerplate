@@ -21,7 +21,18 @@ heroku create
 and you are good to go.
 
 ## Configuration
-Any evironmental variables you may need to set up are to be put in the `.env` file located in the root directory. 
+Any evironmental variables you may need to set up are to be put in the `.env` file located in the root directory.
+
+
+template
+```
+MONGOHQ_URL=
+DOMAIN=
+LOGGLY_SUBDOMAIN=
+LOGGLY_USERNAME=
+LOGGLY_PASSWORD=
+LOGGLY_INPUT=
+```
 
 ## Running
 It is safest to run this application using the `foreman` environement runner provided by the Heroku toolbelt.
