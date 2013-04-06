@@ -4,6 +4,8 @@
 app      = (require 'express')()
 port     = process.env.PORT or 8080
 mongoose = require 'mongoose'
+settings = require './lib/settings'
+errors   = require './lib/error-handler'
 
 
 console.log "\n\nStarting in mode:", app.settings.env
@@ -14,11 +16,11 @@ mongoose.connection.on 'open', ()->
 
 
   # Configuration
-  require('./lib/settings').boot(app);
+  settings.boot(app);
 
 
   # Error Handler
-  require('./lib/error-handler').boot(app);
+  errors.boot(app)
 
 
   # Bootstrap models
@@ -35,6 +37,9 @@ mongoose.connection.on 'open', ()->
   controller_files.forEach (file) ->
     (require controller_loc + '/' + file)(app)
 
+
+
+  errors.setup404(app)
 
 
   # Start the app by listening on <port>

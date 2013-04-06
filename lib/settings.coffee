@@ -2,10 +2,27 @@ express   = require 'express'
 everyauth = require 'everyauth'
 partials  = require 'express-partials'
 fs        = require 'fs'
+loggly    = require 'loggly'
+
+
 
 exports.boot = (app) ->
 
   app.configure ()->
+
+
+    app.loggly = loggly.createClient(
+      subdomain: app.config.LOGGLY_SUBDOMAIN
+      auth:
+        username: app.config.LOGGLY_USERNAME
+        password: app.config.LOGGLY_PASSWORD
+      )
+
+    app.log = (msg, callback) ->
+      app.loggly.log(app.config.LOGGLY_INPUT, msg, callback)
+
+
+
     app.set 'views', __dirname + '/../views'
 
     app.set 'view engine', 'ejs'
@@ -58,11 +75,16 @@ exports.boot = (app) ->
     app.use app.router
 
 
+
+
+
   app.set 'showStackError', false
-  app.configure 'development', ()->
-    app.use express.errorHandler
-      dumpExceptions: true
-      showStack: true
+
+
+  # app.configure 'development', ()->
+  #   app.use express.errorHandler
+  #     dumpExceptions: true
+  #     showStack: true
 
 
   app.configure 'staging', ()->

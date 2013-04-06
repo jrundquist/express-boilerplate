@@ -8,5 +8,4 @@ logs/access.log
 /views/*     # view files
 /views*     # view files
 /node_modules/*
-*.coffee      # ignore any CSS files too
 *.log
