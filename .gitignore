@@ -19,3 +19,5 @@ logs/*
 
 logs/access.log
 npm-debug.log
+
+.env
